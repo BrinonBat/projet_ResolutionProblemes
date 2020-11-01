@@ -26,8 +26,9 @@ array[1..4] of var 0..9: b;
 array[1..4] of var 0..9: c;
 array[1..3] of var 0..9: d;
 
+
 enum operator={add,sous,mul};
-array[4] of operator: tabOp;
+array[1..4] of operator: tabOp;
 
 /*
 array[4] of int: tabOp; % liste des operateurs dans l'ordre de lecture (haut en bas, gauche à droite)
@@ -50,14 +51,18 @@ constraint if(tabOp[1]==add) then a[1]+a[2]=a[3]
 constraint if(tabOp[2]==add) then b[1]+b[2]=(b[3]*10+b[4]) 
   else (if(tabOp[2]==sous) then b[1]-b[2]=(b[3]*10+b[4]) else b[1]*b[2]=(b[3]*10+b[4])endif)
   endif;
-   
+
 constraint if(tabOp[3]==add) then c[1]+c[2]=(c[3]*10+c[4]) 
   else (if(tabOp[3]==sous) then c[1]-c[2]=(c[3]*10+c[4]) else c[1]*c[2]=(c[3]*10+c[4])endif)
   endif;
-     
+
 constraint if(tabOp[4]==add) then d[1]+d[2]=d[3] 
   else (if(tabOp[4]==sous) then d[1]-d[2]=d[3] else d[1]*d[2]=d[3]endif)
   endif;   
       
 solve satisfy;
-output[forall(res in a)(show_int(res))];
+output  ["\n a :"]++["\(resa) "| resa in a]
+      ++["\n b :"]++["\(resb) "| resb in b]
+      ++["\n c :"]++["\(resc) "| resc in c]
+      ++["\n d :"]++["\(resd) "| resd in d]
+      ;
