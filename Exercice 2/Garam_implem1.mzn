@@ -4,20 +4,20 @@
  mise en forme du garam :
 |-----------|   |-----------|
 |     a     |   |     f     |
-|   |---|   |   |   |---|   |
-| b |   | c |   | g |   | h |
+|   |---|   |---|   |---|   |
+| b |   | c   e   g |   | h |
 |   |   |   |---|   |   |   |
-|   |---|     e     |---|   |
-|     d     |---|     i     |
+|   |---|   |   |   |---|   |
+|     d     |   |     i     |
 |---|   |---|   |---|   |---|
     | j |           | k |
 |---|   |---|   |---|   |---|
 |     l     |   |     q     |
-|   |---|   |   |   |---|   |
-| m |   | n |   | r |   | s |
+|   |---|   |---|   |---|   |
+| m |   | n   p   r |   | s |
 |   |   |   |---|   |   |   |
-|   |---|     p     |---|   |
-|     o     |---|     t     |
+|   |---|   |   |   |---|   |
+|     o     |   |     t     |
 |-----------|   |-----------|
 **************************/
 
@@ -60,7 +60,7 @@ constraint a[3]=c[1];
 constraint d[1]=b[4];
 constraint d[2]=j[1];
 constraint d[3]=c[4];
-constraint e[1]=c[3];
+constraint e[1]=c[2];
 
 /* haut-droit */
 constraint f[1]=g[1];
@@ -68,7 +68,7 @@ constraint f[3]=h[1];
 constraint i[1]=g[4];
 constraint i[2]=k[1];
 constraint i[3]=h[4];
-constraint e[3]=g[3];
+constraint e[3]=g[2];
 
 /* bas-gauche */
 constraint l[1]=m[1];
@@ -76,7 +76,7 @@ constraint l[2]=j[3];
 constraint l[3]=n[1];
 constraint o[1]=m[4];
 constraint o[3]=n[4];
-constraint p[1]=n[3];
+constraint p[1]=n[2];
 
 /* bas-droit */
 constraint q[1]=r[1];
@@ -84,7 +84,7 @@ constraint q[2]=k[3];
 constraint q[3]=s[1];
 constraint t[1]=r[4];
 constraint t[3]=s[4];
-constraint p[3]=r[3];
+constraint p[3]=r[2];
 
 %contraintes de dizaines positives
 constraint b[3]>0;
@@ -184,17 +184,17 @@ solve satisfy;
 
 output [" \(a[1]) \(tabOp[1]) \(a[2]) = \(a[3])         \(f[1]) \(tabOp[2]) \(f[2]) = \(f[3])\n"]++
        ["\(tabOp[3])       \(tabOp[4])       \(tabOp[5])       \(tabOp[6])\n"]++
-       [" \(b[2])         \(c[2])         \(g[2])         \(h[2])\n"]++
+       [" \(b[2])         \(c[2]) \(tabOp[7]) \(e[2]) = \(g[2])         \(h[2])\n"]++
        [" =         =         =         = \n"]++
-       [" \(b[3])         \(c[3]) \(tabOp[7]) \(e[2]) = \(g[3])         \(h[3])\n"]++
+       [" \(b[3])         \(c[3])         \(g[3])         \(h[3])\n"]++
        [" \(d[1]) \(tabOp[8]) \(d[2]) = \(d[3])         \(i[1]) \(tabOp[9]) \(i[2]) = \(i[3])\n"]++
        ["      \(tabOp[10])                 \(tabOp[11])\n"]++
        ["       \(j[2])                   \(k[2])\n"]++
        ["       =                   =\n"]++
        [" \(l[1]) \(tabOp[12]) \(l[2]) = \(l[3])         \(q[1]) \(tabOp[13]) \(q[2]) = \(q[3])\n"]++
        ["\(tabOp[14])       \(tabOp[15])       \(tabOp[16])       \(tabOp[17])\n"]++
-       [" \(m[2])         \(n[2])         \(r[2])         \(s[2])\n"]++
+       [" \(m[2])         \(n[2]) \(tabOp[18]) \(p[2]) = \(r[2])         \(s[2])\n"]++
        [" =         =         =         = \n"]++
-       [" \(m[3])         \(n[3]) \(tabOp[18]) \(p[2]) = \(r[3])         \(s[3])\n"]++
+       [" \(m[3])         \(n[3])         \(r[3])         \(s[3])\n"]++
        [" \(o[1]) \(tabOp[19]) \(o[2]) = \(o[3])         \(t[1]) \(tabOp[20]) \(t[2]) = \(t[3])\n"];
        
