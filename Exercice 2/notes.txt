@@ -8,14 +8,20 @@ Premiere modélisation du Garam:
 	un tableau 'ope' indique quel operateur est présent dans chaque tableau.
 
 	exemple : 
-	tab a =[1,,4]
+	tab a =[1,_,4]
 	tab ope = ['add'] 
-	alors a[1] = 3, car 1+3=4
+	alors a[2] = 3, car 1+3=4
+
+reste à faire : 
+	Ajout de 2 autres Garam à tester
+	rédiger le rapport sur cette modélisation, utilisation des outils de visualisation du compilateur
+	remettre de l'ordre dans les fichiers
 
 2eme modélisation du Garam:
-	Utilisation d'une immense matrice couvrant tout le garam, avec les endroits " non-remplissable " remplis par des -1
+	Utilisation d'une immense matrice couvrant tout le garam, 
+	avec les endroits " non-remplissable " remplis par des -1
 
 3eme modélisation possible:
-	chaque case a une variable associée. 3 types de variables : operateur {'add','sous','div','mul'} ; int_ubit 0..9;
+	chaque case a une variable associée. 3 types de variables : operateur {'add','sou','mul'} ; int_ubit 0..9;
 	int_dbit 10..99
 
