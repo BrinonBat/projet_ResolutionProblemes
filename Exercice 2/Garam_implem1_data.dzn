@@ -1,4 +1,4 @@
-tabOp=[add,mul,add,sous];
+tabOp=[add,mul,add,sou];
 a=[2,_,5];
 b=[2,_,1,6];
 c=[5,7,_,_];
