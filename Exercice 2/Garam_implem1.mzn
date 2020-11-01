@@ -26,9 +26,8 @@ array[1..4] of var 0..9: b;
 array[1..4] of var 0..9: c;
 array[1..3] of var 0..9: d;
 
-
 enum operator={add,sous,mul};
-array[1..4] of operator: tabOp;
+array[4] of operator: tabOp;
 
 /*
 array[4] of int: tabOp; % liste des operateurs dans l'ordre de lecture (haut en bas, gauche à droite)
@@ -36,12 +35,6 @@ array[4] of int: tabOp; % liste des operateurs dans l'ordre de lecture (haut en 
 2: sous;
 3: mul;
 */
-/* remplissage */
-constraint a[1]=2;
-constraint a[3]=5;
-constraint c[2]=7;
-constraint b[3]=1;
-constraint b[4]=6;
 
 /* contraintes de croisements de tableaux*/
 constraint a[1]=b[1];
@@ -67,8 +60,4 @@ constraint if(tabOp[4]==add) then d[1]+d[2]=d[3]
   endif;   
       
 solve satisfy;
-output  ["\n a :"]++["\(resa) "| resa in a]
-      ++["\n b :"]++["\(resb) "| resb in b]
-      ++["\n c :"]++["\(resc) "| resc in c]
-      ++["\n d :"]++["\(resd) "| resd in d]
-      ;
+output[forall(res in a)(show_int(res))];
