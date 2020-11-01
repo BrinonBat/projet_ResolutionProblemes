@@ -59,12 +59,12 @@ constraint if(tabOp[2]==add) then b[1]+b[2]=(b[3]*10+b[4])
   else (if(tabOp[2]==sous) then b[1]-b[2]=(b[3]*10+b[4]) else b[1]*b[2]=(b[3]*10+b[4])endif)
   endif;
    
-constraint if(tabOp[4]==add) then c[1]+c[2]=(c[3]*10+c[4]) 
-  else (if(tabOp[4]==sous) then c[1]-c[2]=(c[3]*10+c[4]) else c[1]*c[2]=(c[3]*10+c[4])endif)
+constraint if(tabOp[3]==add) then c[1]+c[2]=(c[3]*10+c[4]) 
+  else (if(tabOp[3]==sous) then c[1]-c[2]=(c[3]*10+c[4]) else c[1]*c[2]=(c[3]*10+c[4])endif)
   endif;
      
-constraint if(tabOp[3]==add) then d[1]+d[2]=d[3] 
-  else (if(tabOp[3]==sous) then d[1]-d[2]=d[3] else d[1]*d[2]=d[3]endif)
+constraint if(tabOp[4]==add) then d[1]+d[2]=d[3] 
+  else (if(tabOp[4]==sous) then d[1]-d[2]=d[3] else d[1]*d[2]=d[3]endif)
   endif;   
       
 solve satisfy;
