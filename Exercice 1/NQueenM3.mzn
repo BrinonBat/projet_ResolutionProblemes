@@ -26,7 +26,7 @@ constraint forall (c in (1..n))(
 
 
 constraint forall (x, y in (1..n) where damier[x, y] = true)( %pour chaque cellule avec une reine
-  forall(p, q in (1..n) where ((p != x) \/ (q != y)))( %pour chaque autre cellue different de [x,y]
+  forall(p, q in (1..n) where ((p != x) /\ (q != y)))( %pour chaque autre cellue different de [x,y]
     ((abs(p-x) = abs(q-y)) -> (damier[p, q] = false)) %s'ils partagent un diagonale alors [p,q] faux
   )
 );
