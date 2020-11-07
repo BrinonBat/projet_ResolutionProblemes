@@ -1,0 +1,10 @@
+% rikudo
+
+% liens
+linksL1=[false,false,false,false,false,false,false,false,false,false,false];
+linksL2=[false,false,false,false,false,false,false,false,false,false,false,false,false,false];
+linksL3=[false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false];
+linksL4=[false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false];
+linksL5=[false,false,false,false,false,false,false,false,false,false,false,false,false,false,false];
+linksL6=[false,false,false,false,false,false,false,false,false,false,false,false];
+linksL7=[false,false,false,false];

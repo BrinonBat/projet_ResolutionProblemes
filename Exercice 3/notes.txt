@@ -1,7 +1,12 @@
 Modelisation 1:
 Utilisation d'un tableau de cellules ainsi que d'un matrice d'adjacence
 
-Modelisation 2:
+Modelisation 2: tableau de cases.
 liste les contraintes et les adjacence de chaque case 
+on n'a pas besoin de gérer les entrées et les sorties de chaque case.
+	Si on gére uniquement les sorties, ça suffit à résoudre le Graham, sauf dans les cas de liens obligatoires.
 
-Modelisation 3: mise sous forme de matrice
+	Le calculateur Gecode cherche à l'infini, il faut utiliser chuffed pour que ça fonctionne
+
+Modelisation 3: mise sous forme de matrice.
+	ne fonctionne pas car surcharge à cause de la prise en compte des cases inutiles.
