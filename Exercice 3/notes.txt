@@ -1,0 +1,7 @@
+Modelisation 1:
+Utilisation d'un tableau de cellules ainsi que d'un matrice d'adjacence
+
+Modelisation 2:
+liste les contraintes et les adjacence de chaque case 
+
+Modelisation 3: mise sous forme de matrice

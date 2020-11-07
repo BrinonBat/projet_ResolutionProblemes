@@ -42,7 +42,7 @@ array [1..36] of set of int: neighbors = [
 ];*/
 
 %adjacence matrix
-array [1..36, 1..36] of int: graphe = [|
+array [1..36, 1..36] of bool: graphe = [|
 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 | 
 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 | 
 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 | 
@@ -84,29 +84,17 @@ array [1..36, 1..36] of int: graphe = [|
 include "alldifferent.mzn";
 constraint alldifferent(cells);
 
-/*
+/* utilisé pour la 2eme modelisation
 constraint (cells[x] = cells[a]-1 \/ cells[x] = cells[a]+1) \/ 
             (cells[x] = cells[b]-1 \/ cells[x] = cells[b]+1) \/
             (cells[x] = cells[c]-1 \/ cells[x] = cells[c]+1);
 */
       
-
-constraint forall(cell in [0..35])(
-  forall(n in [0..35] where graphe[cell, n]=1)(
-    exists(cells[])
+/* wtf ? */
+constraint forall(cell in [1..36])(
+  forall(n in [1..36] where graphe[cell, n]>0)(
+    exists(cells[n])
   )
-
 );      
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
             
             

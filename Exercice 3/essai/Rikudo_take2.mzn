@@ -1,9 +1,41 @@
+/* numerotation des cellules
+       / \ / \ / \ / \ 
+      | 1 | 2 | 3 | 4 |
+     / \ / \ / \ / \ / \
+    | 18| 19| 20| 21| 5 |
+   / \ / \ / \ / \ / \ / \
+  | 17| 30| 31| 32| 22| 6 |
+ / \ / \ / \ /X\ / \ / \ / \
+| 16| 29| 36|XXX| 33| 23| 7 |
+ \ / \ / \ / \X/ \ / \ / \ / 
+  | 15| 28| 35| 34| 24| 8 |
+   \ / \ / \ / \ / \ / \ /
+    | 14| 27| 26| 25| 9 |
+     \ / \ / \ / \ / \ /
+      | 13| 12| 11| 10| 
+       \ / \ / \ / \ /       
+*/
+array [1..36] of var 1..36: cells;
 
-array [1..36] of var 1..36: cells;%values of each cell
+/* tableaux listant les liens forcés entre les cellules 
 
+array[1..11] of bool: linksL1;
+array[1..14] of bool: linksL2;
+array[1..18] of bool: linksL3;
+array[1..22] of bool: linksL4;
+array[1..15] of bool: linksL5;
+array[1..12] of bool: linksL6;
+array[1..4] of bool: linksL7;
+*/
+/* contraintes */
+
+%chaque cellule est différente
 include "alldifferent.mzn";
 constraint alldifferent(cells);
 
+%contraintes de liens forcés
+
+%contraines de valeurs en fonction des voisins
 constraint cells[1] = cells[2]-1 \/ cells[1] = cells[2]+1 \/ 
 cells[1] = cells[18]-1 \/ cells[1] = cells[18]+1 \/ 
 cells[1] = cells[19]-1 \/ cells[1] = cells[19]+1; 
@@ -207,3 +239,12 @@ cells[36] = cells[31]-1 \/ cells[36] = cells[31]+1 \/
 cells[36] = cells[35]-1 \/ cells[36] = cells[35]+1 \/ 
 cells[36] = cells[28]-1 \/ cells[36] = cells[28]+1 \/ 
 cells[36] = cells[29]-1 \/ cells[36] = cells[29]+1; 
+
+solve satisfy;
+output[show_int(2,cells[1])];
+/*
+output["       / \ / \ / \ / \ \n"]++
+output["      | "+show_int(cells[1],2)+"| 2 | 3 | 4 | \n"]
+;
+*/
+
