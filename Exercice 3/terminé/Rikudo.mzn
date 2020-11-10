@@ -10,7 +10,7 @@ array[1..num_liens, 1..2] of int: liens;
 
 
 array [1..36] of var 1..36: cells; %position de chaque valeur: example: cells[18] = position dans la grille du numero 18
-% cad si cells[18] = 5 alors le 18 ce trouve a la case 5
+% cad si cells[18] = 5 alors le 18 se trouve a la case 5
 
 
 /* numerotation des cellules
