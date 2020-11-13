@@ -1,0 +1,30 @@
+/* rikudo modélisé 
+       / \ / \ / \ / \ 
+      |   |   |   |   |
+     / \ / \ / \ / \ / \
+    |   |   |   |   |   |
+   / \ / \ / \ / \ / \ / \
+  |   |   |   |   |   |   |
+ / \ / \ / \ /X\ / \ / \ / \
+|   |   |   |XXX|   |   |   |
+ \ / \ / \ / \X/ \ / \ / \ / 
+  |   |   |   |   |   |   |
+   \ / \ / \ / \ / \ / \ /
+    |   |   |   |   |   |
+     \ / \ / \ / \ / \ /
+      |   |   |   |   | 
+       \ / \ / \ / \ /       
+*/
+
+
+%nombre de case pre rempli
+num_rempli = 0;
+
+%cases pre rempli dans la forme [[valeur, position], [valeur, position], ...]
+rempli = [];
+
+%nombre de liens obligatoires
+num_liens = 0;
+
+%liens obligatoires dans la forme [[position1, position2], [position1, position2], ...]
+liens = [];
