@@ -34,42 +34,6 @@ def maxOne(array, constraints):
 
 
 
-
-
-#break symetries between original array and mirror/flip of original array
-def noSym(array1, array2, constraints):
-    constr = str(array1[0]*-1) + " " + str(array2[0])
-    constraints.append(constr)
-
-"""
-#comparing 2 arrays of booleans lexicographically:
-
-example:
-    array1 = [x1, x2, x3, ...]
-    array2 = [y1, y2, y3, ...]
-    
-array1 <=(lex) array2
-
-<===>
-
-x1 <= y1 OR
-x1 == y1 AND x2 <= y2 OR
-x1 == y1 AND x2 == y2 AND x3 <= y3 OR
-etc...
-
-<===>
-
-(~x1 | y1) | 
-(~Y1 | X1) & (~X1 | Y1) & (~X2 | Y2) | 
-(~Y1 | X1) & (~X1 | Y1) & (~Y2 | X2) & (~X2 | Y2) & (~X3 | Y3) |
-etc...
-
-convert to CNF ==> (~x1 | y1)
-
-"""
-
-
-
  #for each line : exactly 1 queen
 for i in range(n):
     
@@ -107,16 +71,6 @@ diags.extend(damier.diagonal(i) for i in range(n-1,-n,-1))
 for d in diags:
     maxOne(d, constraints)
 
-
-#break symetries
-damier90 = np.rot90(damier, 1, (0, 1))
-noSym(damier.flatten(), damier90.flatten(), constraints)
-
-damier180 = np.rot90(damier, 2, (0, 1))
-noSym(damier.flatten(), damier180.flatten(), constraints)
-
-damier270 = np.rot90(damier, 3, (0, 1))
-noSym(damier.flatten(), damier270.flatten(), constraints)
 
 
 
@@ -164,7 +118,6 @@ for i in range(len(result)):
         result[i] = "X"
 
 result = np.reshape(result, (n, n))
-
 
 np.set_printoptions(threshold=sys.maxsize)
 
