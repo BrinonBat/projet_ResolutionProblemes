@@ -44,7 +44,6 @@ constraint alldifferent(cells);
 %contraines de valeurs en fonction des voisins et des liens
 
 %ligne 1
-  %cas supérieur
   constraint forall(x in 1..FinDeLigne[1])( % chaque élément de la ligne doit avoir au moin un supérieur à côté
     %cas de liens obligatoires
     if(linksL1[(x-1)*3+1]) then (cells[x]=cells[x+TailleL1et7]+1 \/ cells[x]=cells[x+TailleL1et7]-1)else true endif /\ % en bas à gauche
@@ -65,7 +64,7 @@ constraint alldifferent(cells);
     if(x!=FinDeLigne[1]) then cells[x]=cells[x+1]-1 else false endif \/ % à droite
     if(x!=1) then cells[x]=cells[x-1]-1 else false endif) % à gauche
     else true endif)
-  );  
+  );
   
 %ligne 2
   constraint forall(x in (FinDeLigne[1]+1)..FinDeLigne[2])( %on traite chaque élément de la ligne

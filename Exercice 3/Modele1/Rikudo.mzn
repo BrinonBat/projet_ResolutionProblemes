@@ -71,7 +71,7 @@ array [1..36] of set of int: neighbors = [
 {34, 29, 28},
 {35, 30, 29, 33},
 {36, 31, 30, 34},
-{32, 31, 35},
+{32, 31, 35}
 ];
 
 %chaque cellule doit etre le voisin de son supérieur (sauf 36 mais si 35 est voisin de 36 alors c'est bon)
@@ -125,24 +125,3 @@ output["       / \\ / \\ / \\ / \\ \n"]++
       ["      | "++show_int(2,display[33])++"| "++show_int(2,display[34])++"| "++show_int(2,display[35])++"| "++show_int(2,display[36])++"| \n"]++
       ["       \\ / \\ / \\ / \\ / \n"]
 ;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
