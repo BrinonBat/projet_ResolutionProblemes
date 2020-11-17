@@ -11,7 +11,7 @@ Ces modélisations résolvent les exercices fourni dans l'énoncé "projet.pdf"
 Il y a un dossier par exercice et des fichiers "notes" servant à noter les améliorations effectuées, les résultats des differents tests, et les améliorations possibles.
 les fichiers avec l'extension "dzn" sont les données servant à l'execution des fichiers ayant l'extension "mzn" 
 
-###Répartition des tâches
+### Répartition des tâches
 
 1. Exercice 1
 	- M1:
