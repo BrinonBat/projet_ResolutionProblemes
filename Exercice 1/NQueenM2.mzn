@@ -12,7 +12,7 @@ array[m] of var int : PosColonne;
 constraint forall(i in m)(PosLigne[i] > 0 /\ PosLigne[i] <= n);
 constraint forall(i in m)(PosColonne[i] > 0 /\ PosColonne[i] <= n);
 
-constraint PosColonne[1] <= (n+1) div 2 ;
+%constraint PosColonne[1] <= (n+1) div 2 ;
 constraint forall(i in m)(PosLigne[i] = i );
 
 
