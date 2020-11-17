@@ -7,6 +7,18 @@ enum operator={add,sou,mul};
 array[1..20] of operator: tabOp;
 
 
+
+% contraintes de dizaines
+
+constraint garam[3,1]>0;
+constraint garam[3,3]>0;
+constraint garam[3,5]>0;
+constraint garam[3,7]>0;
+constraint garam[8,1]>0;
+constraint garam[8,3]>0;
+constraint garam[8,5]>0;
+constraint garam[8,7]>0;
+
 /* contraintes d'operations */
 
 /* grille 1 ( haut à gauche) */
