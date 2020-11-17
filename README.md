@@ -14,10 +14,10 @@ les fichiers avec l'extension "dzn" sont les données servant à l'execution des
 ### Répartition des tâches
 
 1. Exercice 1
-	- R1:CHOUEIB Alexandre
-	- R2:CHOUEIB Alexandre
+	- R1:Alexandre Chouieb
+	- R2:Alexandre Chouieb
 	- R3:Christopher Loughran
-	- R4:CHOUEIB Alexandre
+	- R4:Alexandre Chouieb
 	- R5:Christopher Loughran
 	- R6:Christopher Loughran
 2. Exercice 2
